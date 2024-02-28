@@ -1,3 +1,8 @@
+@import "mapas.less";
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(max-width: 1023px)"
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +11,7 @@
 }
 
 body {
-    background-color: #f5f6fa;
+    background-color:#colors [colors]
 }
 
 li {
@@ -17,10 +22,21 @@ li {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+
+    @media @breakpointTablet (max-width: 1023px) {
+        .container {
+            max-width: 80%;
+        }
+    
+        .products {
+            grid-template-columns: repeat(2, 48.5%);
+            column-gap: 3%;
+        }
+    }
 }
 
 header {
-    background-color: #182C61;
+    background-color:#colors [background-color];
     position: sticky;
     top: 0;
     left: 0;
@@ -43,7 +59,7 @@ header .container {
 }
 
 .menu li a {
-    color: #fff;
+    color: #colors[licolor];
     text-decoration: none;
 }
 
@@ -58,6 +74,16 @@ section {
     column-gap: 1%;
     row-gap: 4%;
     width: 100%;
+
+    @media @breakpointMobile (max-width: 767px) {
+        .products {
+            display: block;
+        }
+    
+        .product-item  {
+            margin-bottom: 32px;
+        }
+    }
 }
 
 .product-item img {
@@ -67,8 +93,8 @@ section {
 
 .product-button {
     display: block;
-    background-color: #44bd32;
-    color: #fff;
+    background-color:#colors [buttonbackground-color];
+    color: #colors[licolor];
     text-align: center;
     padding: 8px 0;
     border-radius: 8px;
@@ -77,10 +103,10 @@ section {
 }
 
 .product-button:hover {
-    background-color: #4cd137;
+    background-color:#colors[hoverbackground-color];
 }
 
-@media screen and (max-width: 1023px) {
+@media @breakpointTablet (max-width: 1023px) {
     .container {
         max-width: 80%;
     }
@@ -88,15 +114,5 @@ section {
     .products {
         grid-template-columns: repeat(2, 48.5%);
         column-gap: 3%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .products {
-        display: block;
-    }
-
-    .product-item  {
-        margin-bottom: 32px;
     }
 }

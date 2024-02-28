@@ -49,6 +49,14 @@ section {
   row-gap: 4%;
   width: 100%;
 }
+@media (max-width: 767px) (max-width: 767px) {
+  .products .products {
+    display: block;
+  }
+  .products .product-item {
+    margin-bottom: 32px;
+  }
+}
 .product-item img {
   width: 100%;
   border-radius: 16px;
@@ -73,13 +81,5 @@ section {
   .products {
     grid-template-columns: repeat(2, 48.5%);
     column-gap: 3%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .products {
-    display: block;
-  }
-  .product-item {
-    margin-bottom: 32px;
   }
 }
